@@ -8,7 +8,7 @@ stampare a schermo la bici con peso minore.*/
 const bike = [
   {
     'nome': 'Mountain bike',
-    'peso': 18
+    'peso': 10
   },
   {
     'nome': 'Bici da ciclocross',
@@ -24,7 +24,7 @@ const bike = [
   },
   {
     'nome': 'Bici da corsa',
-    'peso': 10
+    'peso': 18
   },
   {
     'nome': 'Bici elettrica',
@@ -41,7 +41,7 @@ const bike = [
 //  }
 //}
 //console.log(lightBike);
-console.log(bike)
+//console.log(bike)
 // riporto nel document.html
 //document.getElementById('outputUno').innerHTML = ` La Bici più leggera è: ${lightBike.nome} ${lightBike.peso}`;
 
@@ -52,9 +52,12 @@ Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e pe
 Stampare a schermo la bici con peso minore utilizzando destructuring e template literal*/
 
 // utilizzo il DESTRUCTURING come richiesto e commento quanto fatto in precenza
-const [, , , , bikeOne] = bike;
-console.log(bikeOne);
+//const [, , , , bikeOne] = bike;
+//console.log(bikeOne);
+ bike.sort((a, b) => a.nome - b.peso);
 
+ let [lightBike] = bike;
+ console.log(lightBike);
 
 // riporto in HTML
-document.getElementById('outputUno').innerHTML = `La bici più leggera è: ${bikeOne.nome} ${bikeOne.peso}`;
+document.getElementById('outputUno').innerHTML = `La bici più leggera è: ${lightBike.nome} ${lightBike.peso}`;
